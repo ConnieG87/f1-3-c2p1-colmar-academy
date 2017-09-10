@@ -1,0 +1,493 @@
+/* TEXT STYLES */
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  padding-bottom: 32px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  padding-top: 32px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  padding-bottom: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: color 100ms;
+}
+
+a:hover {
+  color: #14488C;
+}
+
+i {
+  padding-right: 8px;
+}
+
+/* REUSABLE COMPONENTS */
+
+.container {
+  display: flex;
+  margin: 0 24px;
+}
+
+.media-container {
+  height: auto;
+  overflow: hidden;
+}
+
+.course img, .media-container img, video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*Used to make the divs in Information and Thesis Exhibits into links*/
+.link-span {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+.button {
+  background-color: #092140;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  border: 1px solid #14488C;
+  border-radius: 8px;
+  transition: all 500ms;
+}
+
+.button:hover {
+  background-color: #14488C;
+  border-color: #092140;
+  color: #FFF;
+}
+
+.button:active {
+  background-color: #D0ECFF;
+  color: #092140;
+}
+
+/* HEADER */
+
+header .container, footer .container {
+  justify-content: space-between;
+}
+
+header .container {
+  height: 64px;
+  align-items: center;
+}
+
+header {
+  position: fixed;
+  background-color: #FFF;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 4px 4px 12px #A6A6A6;
+}
+
+.logo {
+  height: 32px;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  padding-right: 4px;
+}
+
+.logo .academy {
+  color: #14488C;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  padding-left: 16px;
+}
+
+nav.mobile {
+  display: none;
+}
+
+/* BANNER */
+
+.banner {
+  background-color: #B2C8C6;
+  padding-top: 64px; /*offset for the fixed header*/
+}
+
+.banner .media-container {
+  width: 60%;
+  margin: 32px 0;
+}
+
+.cta {
+  margin-left: 24px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta .subtitle {
+  font-size: 1.2rem;
+  padding-bottom: 32px;
+}
+
+/* INFORMATION */
+
+.main-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding: 32px 0;
+}
+
+.main-article h2 {
+  padding-bottom: 24px;
+}
+
+p.author {
+  font-size: 0.8rem;
+  color: #798887;
+}
+
+.featured-info, .featured-theses {
+  /*Specification inconsistency here: 60% + 40% width of elements with 24px margin in between is more than 100%.
+  Therefore the width will grow from 35% to fill the remaining space*/
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 24px;
+}
+
+.featured-info {
+  padding: 32px 0;
+  /*Specs show left-border here, but this is removed for aesthetic reasons*/
+  /*border-left: 1px solid #B7B1A9; */
+}
+
+.info-item {
+  display: flex;
+  padding: 16px;
+  position: relative;
+  transition: background-color 500ms;
+  /*Specs show borders here, but these are removed for aesthetic reasons and to make them consistent with the items in the thesis section*/
+  /*border: 1px solid #B7B1A9;*/
+}
+
+.info-item:hover {
+  background-color: #D0ECFF;
+}
+
+.info-item .media-container {
+   width: 35%;
+ }
+
+.info-item .media-container img.mobile {
+  display: none;
+}
+
+.info-item .description {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
+}
+
+.info-item a {
+  text-decoration: underline;
+  color: #14488C;
+  padding-top: 8px;
+  z-index: 10; /*makes sure this link appears on top of the full-div link*/
+  transition: all 100ms;
+}
+
+.info-item a:hover {
+  color: #092140;
+  font-weight: 600;
+}
+
+/*Some items are highlighted in the specs, which was done with this code.
+I have chosen to highlight them on hover instead and make the whole div a link.*/
+
+/*
+.highlighted {
+  background-color: #C8E9EF;
+}*/
+
+/* COURSES */
+
+.courses {
+  background-color: #798887;
+  padding-bottom: 16px;
+}
+
+.container.small {
+  margin: 0 56px;
+  flex-wrap: wrap;
+}
+
+.courses h2 {
+  text-align: center;
+  padding-bottom: 16px;
+  color: #FFF;
+}
+
+.course {
+  width: 30%;
+  margin: 16px;
+  flex-grow: 1;
+  background-color: white;
+  position: relative;
+  transition: all 250ms;
+}
+
+.course:hover {
+  color: #14488C;
+  font-weight: 600;
+}
+
+.course-info {
+  padding: 16px 16px 24px 16px;
+}
+
+span.category {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* THESIS */
+
+.thesis h2 {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.video-section {
+  width: 60%;
+}
+
+.video-section h3 {
+  padding-top: 24px;
+}
+
+.acc-article {
+  margin-bottom: 32px;
+}
+
+/* No longer needed as the border of info-item is removed in the information section*/
+/*
+.featured-theses .info-item {
+  border: none;
+}*/
+
+/* FOOTER */
+
+footer {
+  height: 72px;
+  font-size: 0.8rem;
+  /*border-top: 1px solid #B7B1A9;*/  /* No longer desired because the footer has a background color */
+  padding-top: 16px;
+  background-color: #092140;
+  color: #FFF;
+}
+
+footer a {
+  color: #FFF;
+  padding-left: 8px;
+}
+
+footer a:hover {
+  color: #FFF;
+}
+
+/* MOBILE VERSION, BREAKPOINT AT 640px */
+
+@media only screen and (max-width: 640px) {
+
+  .container {
+    margin: 0 16px;
+  }
+
+  /* Header */
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  .logo span, nav.desktop {
+    display: none;
+  }
+
+  nav.mobile {
+    display: flex;
+    flex-grow: 2;   /* navigation should take up 2/3 of the screen, so it should grow twice as fast as the logo. */
+  }
+
+  nav ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  /* Banner */
+
+  .banner .container {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .banner .media-container {
+    width: 100%;
+    margin: 0;
+    height: 275px;  /*picture is limited in height and vertically centered in mobile spec*/
+    display: flex;
+    align-items: center;
+  }
+
+  .cta {
+    width: 100%;
+    margin: 32px 16px;
+  }
+
+  .cta .subtitle {
+    padding-bottom: 24px;
+  }
+
+  /* Information */
+
+  .main-article {
+    display: none;
+  }
+
+  .featured-info {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 16px;
+    padding-bottom: 0;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: none;
+  }
+
+  .info-item .media-container {
+    width: 100%;
+  }
+
+  .info-item .media-container img.desktop {
+    display: none;
+  }
+
+  .info-item .media-container img.mobile {
+    display: block;
+  }
+
+  .info-item .description {
+    width: 100%;
+    padding: 32px 16px;
+  }
+
+  /* Courses */
+
+  .courses {
+    border-top: 1px solid #092140;
+    border-bottom: 1px solid #092140;
+    background-color: #FFF;
+    padding-bottom: 24px;
+  }
+
+  .courses h2 {
+    color: #000;
+  }
+
+  .container.small {
+    margin: 0 16px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .course {
+    width: auto;
+    background-color: #798887;
+    margin: 0 0 8px 0;
+    color: #FFF;
+  }
+
+  .course img, span.category, .course p {
+    display: none;
+  }
+
+  .course h3 {
+    padding-bottom: 0;
+  }
+
+  /* Thesis */
+
+  .thesis h2 {
+    padding-bottom: 16px;
+  }
+
+  .featured-theses, .acc-article {
+    display: none;
+  }
+
+  .video-section {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+
+  footer {
+    border: none;
+    height: auto;
+  }
+
+  footer span {
+    font-size: 1rem;
+    padding-bottom: 16px;
+  }
+
+  footer .links {
+    display: none;
+  }
+
+}
